@@ -1,0 +1,21 @@
+/* -- Byimaan -- */
+
+$breakpoints: (
+    'phone': 500px,
+    'tablet': 768px,
+    'desktop': 1030px,
+    'large-desktop': 1280px
+);
+
+@mixin res-to($breakpoint){
+    @if map-has-key($breakpoints,$breakpoint){
+        @media(max-width: map-get($breakpoints, $breakpoint)){
+            @content;
+        }
+    } @else {
+        @warn 'Byimaan: Unknown breakpoint: #{$breakpoint}.'
+    }
+};
+
+
+

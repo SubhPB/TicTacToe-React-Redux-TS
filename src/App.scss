@@ -1,0 +1,25 @@
+/* -- Byimaan -- */
+@import './mixins.scss';
+
+.App{
+  background-color: rgb(16, 16, 24);
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  
+  .refresh-btn{
+    position: absolute;
+    z-index: 15;
+    height: 6.5vmin;
+    width: 6.5vmin;
+    right: 5%;
+    top: 48%;
+    cursor: pointer;
+
+    @include res-to('phone'){
+      top: 30%;
+      right: 10%;
+    };
+  }
+};
+
