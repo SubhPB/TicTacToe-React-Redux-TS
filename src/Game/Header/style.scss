@@ -1,0 +1,24 @@
+/* -- Byimaan -- */
+@import './../../mixins.scss';
+
+.header{
+    width: 100%;
+    padding: 2vmax;
+    align-items: center;
+    display: flex;
+    font-size: 1rem;
+    @include res-to('desktop'){
+        font-size: 1.7rem
+    };
+    
+    .game-icon{
+       margin-right: 2vmax; 
+       display: inline-block;
+       font-size: 2.25em;
+       color: red;
+    }
+    span {
+        color: red;
+    }
+}
+

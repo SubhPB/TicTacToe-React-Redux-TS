@@ -1,0 +1,90 @@
+/* -- Byimaan -- */
+@import './../../mixins.scss';
+
+.board{
+    position: absolute;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3,1fr);
+    gap: 3px;
+    width: 50vmin;
+    height: 50vmin;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    border: none;
+    
+    .board-item:nth-child(3n) {
+        border-right: none;
+      }
+      
+    .board-item:nth-last-child(-n+3) {
+    border-bottom: none;
+    }
+
+    
+    @include res-to('phone'){
+        top: 56%;
+        height: 65vmin;
+        width: 65vmin;
+    };
+
+    @include res-to('desktop'){
+        top: 55%;
+    }
+
+    .board-item{
+        cursor: pointer;
+        background-color: rgb(16, 16, 24);
+        border-right: 2px solid red; 
+        border-bottom: 2px solid red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 5.5vmin;
+        min-width: 5.5vmin;
+        @include res-to('phone'){
+            min-height: 7.22vmin;
+            min-width: 7.22vmin;
+        };
+        
+        .letter{
+            height: 5.1vmin;
+            width: 5.1vmin;
+
+            .l-icon {
+                height: 100%;
+                width: 100%;
+                transition: ease;            
+            };
+
+            .blink {
+                animation: blink .5s linear;
+                animation-iteration-count: 2;
+                transition: ease;
+            }
+            
+
+            @include res-to('phone'){
+                height: 7vmin;
+                width: 7vmin;
+            };
+
+            @keyframes blink {
+                0% {
+                    opacity: 0;
+                    scale: 1.1;
+                }100% {
+                    opacity: 1;
+                    scale: 1.2;
+                };
+            };
+
+        };
+    };
+};
+
+
+

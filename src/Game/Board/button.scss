@@ -1,0 +1,91 @@
+/* -- Byimaan -- */
+@import './../../mixins.scss';
+
+.b-btns{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2vmax;
+    z-index: 10;
+    top: 50%;
+    left: 3%;
+    transform: translateY(-50%);
+    @include res-to('phone') {
+        flex-direction: row;
+        gap: 0;
+        top: 20%;
+        left: 0;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+        width: 100%;
+        justify-content: space-around;
+    };
+    @include res-to('desktop') {
+        flex-direction: row;
+        gap: 0;
+        top: 20%;
+        left: 0;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+        width: 100%;
+        justify-content: space-around;
+    };
+
+    .b-btn{
+        padding: 1.2vmax 2vmax;
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        gap: 1.5vmax;
+        align-items: center;
+        border: none;
+        border-radius: 12px;
+        opacity: .8;
+        background-color: rgb(204, 49, 49);
+        transition: ease-in;
+        transition-duration: .1s;
+    
+        @include res-to('phone'){
+            min-height: 10vmin;
+            min-width: 15vmin;
+            .b-p-icon{
+                min-height: 10vmin;
+                min-width: 7vmin;
+            }
+        };
+    
+        @include res-to('desktop'){
+            left: 2%;
+            min-height: 10vmin;
+            min-width: 13vmin;
+            .b-p-icon{
+                min-height: 8vmin;
+                min-width: 5vmin;
+            }
+        };
+    
+    };
+
+    .active{
+        background-color: green;
+        opacity: .95;
+        scale: 1.1;
+    };
+};
+
+
+.msg-box{
+    width: 100%;
+    height: fit-content;
+    padding: 5vmin 15vmin;
+    text-align: center;
+    position: relative;
+    top: 65vh;
+    .msg{
+        font-weight: 600;
+        font-size: large;
+        color: rgb(177, 165, 165);
+    }
+}
+
